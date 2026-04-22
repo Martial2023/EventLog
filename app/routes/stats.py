@@ -36,9 +36,9 @@ def get_stats():
         cursor.execute("SELECT COUNT(DISTINCT user_id) as cnt FROM events")
         unique = cursor.fetchone()["cnt"]
         cursor.execute("""
-                       SELECT occured_at FROM events ORDER BY occured_at ASC
+                       SELECT occurred_at FROM events ORDER BY occurred_at ASC
                        """)
-        times = [row["occured_at"] for row in cursor.fetchall()]
+        times = [row["occurred_at"] for row in cursor.fetchall()]
         median_gap = compute_median_gap(times)
         return {
             "total_events": total,
