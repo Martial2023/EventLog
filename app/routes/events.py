@@ -114,7 +114,7 @@ def list_events(
 def get_event(event_id: int):
     with get_db() as conn:
         row = conn.execute(
-            "SELECT * FROM events WHERE id = ?", (event_id)
+            "SELECT * FROM events WHERE id = ?", (event_id,)
         ).fetchone()
     
     if not row:
