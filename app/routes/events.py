@@ -141,7 +141,10 @@ def update_event(event_id: int, updates: dict):
             detail={"error": "Event not found", "code": "event_not_found"}
         )
     
-    pass
+    return {
+        "status": "not updated",
+        "reason": "not implemented yet."
+    }
 
 
 @router.delete("/events/{event_id}")

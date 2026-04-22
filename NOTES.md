@@ -45,9 +45,10 @@ Because the spec says it's an "allias for backwards compatibility."
 ## If More time
 
 1. Add validation for payload size(4KB limit)
-2. Extract tag tag validation into reusable function (currently duplicated)
-3. Better test coverage
-4. Add database indexes for common queries
-5. Implement other robust error handling
-6. Add logging and monitoring
-7. Deploy it to a VPS or cloud platform
+2. Implement update_event function for PATCH endpoint
+3. Extract tag tag validation into reusable function (currently duplicated)
+4. Better test coverage
+5. Add database indexes for common queries
+6. Implement other robust error handling
+7. Add logging and monitoring
+8. Deploy it to a VPS or cloud platform
