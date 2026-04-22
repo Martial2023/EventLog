@@ -48,3 +48,6 @@ Because the spec says it's an "allias for backwards compatibility."
 2. Extract tag tag validation into reusable function (currently duplicated)
 3. Better test coverage
 4. Add database indexes for common queries
+5. Implement other robust error handling
+6. Add logging and monitoring
+7. Deploy it to a VPS or cloud platform
