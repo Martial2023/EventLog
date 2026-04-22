@@ -74,11 +74,11 @@ def list_events(
     if cursor:
         try:
             decoded = base64.b64decode(cursor).decode()
-            cursor_occured_at, cursor_id = decoded.split(",", 1)
+            cursor_occurred_at, cursor_id = decoded.split(",", 1)
             conditions.append(
                 "(occurred_at < ? OR (occurred_at = ? AND id < ?))"
             )
-            params.extend([cursor_occured_at, cursor_occured_at, cursor_id])
+            params.extend([cursor_occurred_at, cursor_occurred_at, cursor_id])
         except Exception:
             raise HTTPException(status_code=400, detail="Cursor is invalid")
     
@@ -126,7 +126,7 @@ def get_event(event_id: int):
     event_dict = dict(row)
     event_dict["tags"] = json.loads(event_dict["tags"])
     event_dict["payload"] = json.loads(event_dict["payload"]) if event_dict["payload"] else None
-    event_dict["created_at"] = event_dict["occured_at"]
+    event_dict["created_at"] = event_dict["occurred_at"]
     return event_dict
 
 
