@@ -17,7 +17,7 @@ def create_event(event: EventCreate):
             cursor = conn.cursor()
             recorded_at = datetime.utcnow().isoformat() + "Z"
             cursor.execute("""
-                INSERT INTO events events
+                INSERT INTO events
                 (user_id, occurred_at, recorded_at, kind, tags, payload)
                 VALUES(?, ?, ?, ?, ?, ?)
             """,
