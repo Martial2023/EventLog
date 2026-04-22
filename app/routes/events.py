@@ -152,13 +152,13 @@ def delete_event(event_id: int):
     with get_db() as conn:
         row = conn.execute("SELECT * FROM events WHERE id = ?", (event_id,)).fetchone()
     
-    if not row:
-        raise HTTPException(
-            status_code=404,
-            detail={"error": "Event not found", "code": "event_not_found"}
-        )
-    
-    conn.execute("DELETE FROM events WHERE id = ?", (event_id,))
-    conn.commit()
+        if not row:
+            raise HTTPException(
+                status_code=404,
+                detail={"error": "Event not found", "code": "event_not_found"}
+            )
+        
+        conn.execute("DELETE FROM events WHERE id = ?", (event_id,))
+        conn.commit()
     return {"status": "deleted"}
 
